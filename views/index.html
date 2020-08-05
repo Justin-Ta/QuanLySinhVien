@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+          <h3 class="text-center display-4">Bài Tập Quản Lý Sinh Viên</h3>
+          <div class="form-group">
+              <p>Mã Sinh Viên</p>
+              <input type="text" class="form-control" id="maSV">
+              <p id="error__maSinhVien" class="text-danger"></p>
+              <p id="error__min__max__length" class="text-danger"></p>
+          </div>
+
+          <div class="form-group">
+            <p>Tên Sinh Viên</p>
+            <input type="text" class="form-control" id="tenSV">
+            <p id="error__tenSinhVien" class="text-danger"></p>
+            <p id="error__all__letter__tenSinhVien" class="text-danger"></p>
+        </div>
+
+        <div class="form-group">
+            <p>Email</p>
+            <input type="text" class="form-control" id="email">
+            <p id="error__emailSinhVien" class="text-danger"></p>
+            <p id="error__all__letter__emailSinhVien" class="text-danger"></p>
+        </div>
+
+        <div class="form-group">
+            <p>Loại Sinh Viên</p>
+            <select id="loaiSV" class="form-control">
+                <option value="">-</option>
+                <option value="1">Khó Khăn</option>
+                <option value="2">Bình Thường</option>
+            </select>
+            <p id="error__xepLoai" class="text-danger"></p>
+        </div>
+
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-4">
+                    <p>Điểm Toán</p>
+                    <input type="text" id="diemToan" class="form-control">
+                    <p id="error__diemToan" class="text-danger"></p>
+                    <p class="error__giaTri__diemToan" class="text-danger"></p>
+                </div>
+
+                <div class="col-4">
+                    <p>Điểm Lý</p>
+                    <input type="text" id="diemLy" class="form-control">
+                    <p id="error__diemLy" class="text-danger"></p>
+                    <p class="error__giaTri__diemLy" class="text-danger"></p>
+                </div>
+
+                <div class="col-4">
+                    <p>Điểm Hóa</p>
+                    <input type="text" id="diemHoa" class="form-control">
+                    <p id="error__diemHoa" class="text-danger"></p>
+                    <p class="error__giaTri__diemHoa" class="text-danger"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Điểm Rèn Luyện</p>
+            <input type="text" id="diemRenLuyen" class="form-control">
+            <p id="error__diemRenLuyen" class="text-danger"></p>
+            <p class="error__giaTri__diemRenLuyen" class="text-danger"></p>
+        </div>
+
+        <div class="form-group text-center">
+            <button class="btn btn-success" id="themSinhVien">Thêm Sinh Viên</button>
+            <button class="btn btn-primary" id="luuThongTinSinhVien">Cập Nhật</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th>Mã Sinh Viên</th>
+                    <th>Tên Sinh Viên</th>
+                    <th>Email</th>
+                    <th>Loại Sinh Viên</th>
+                    <th>Điểm Trung Bình</th>
+                    <th>Điểm Rèn Luyện</th>
+                   <th></th>
+                </tr>
+                <tbody id="tableSinhVien" class="text-center">
+                    
+                </tbody>
+            </thead>
+        </table>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Thu vien giao tiep voi api-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+    <!-- Model -->
+      <script src="../models/sinhVien.js"></script>
+      <script src="../models/Validation.js"></script>
+    <!-- Services -->
+      <script src="../services/sinhVienService.js"></script>
+    <!-- Controller -->
+    <!-- <script src="../controllers/index.js"></script> -->
+    <script src="../controllers/indexAjax.js"></script>
+  </body>
+</html>
